@@ -1,2 +1,2 @@
 # API_Controle_Estoque
-API para controle de estoeue de alimentos
+API para controle de estoque de alimentos
