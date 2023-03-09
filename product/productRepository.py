@@ -1,5 +1,5 @@
 import uuid
-from product.products import Product
+from product.product import Product
 
 INVENTORY_MEMORY = []
 
