@@ -1,8 +1,6 @@
 from flask import Flask, make_response, jsonify, request
 from product import productRepository
 
-
-
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
@@ -19,7 +17,7 @@ def getAllProduct():
 
 
 @app.route('/product/<product_id>', methods=['GET'])
-def getProductById (product_id):
+def getProductById(product_id):
     product = productRepository.getById(product_id)
     return make_response(jsonify(product.to_json()))
 
@@ -27,10 +25,10 @@ def getProductById (product_id):
 @app.route('/addProduct', methods=['POST'])
 def creatProduct():
     product = productRepository.create(request.json['tipe'],
-                                 request.json['brand'],
-                                 request.json['dateEntry'],
-                                 request.json['expirationDate'])
-    
+                                       request.json['brand'],
+                                       request.json['dateEntry'],
+                                       request.json['expirationDate'])
+
     return make_response(jsonify(id=product.id), 201)
 
 
